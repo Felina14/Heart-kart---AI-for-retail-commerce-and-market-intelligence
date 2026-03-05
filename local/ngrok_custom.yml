@@ -1,0 +1,7 @@
+version: "2"
+authtoken: 35ZDEQ7XApWH4Y5YCGY1SCWihkb_DBqsY7E8FbdzFE2s7rcJ
+tunnels:
+  voice:
+    proto: http
+    addr: 8080
+    bind_tls: true

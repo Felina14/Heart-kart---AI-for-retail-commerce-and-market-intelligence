@@ -1,0 +1,19 @@
+# AWS Bedrock AgentCore Runtime Requirements
+strands-agents>=1.14.0
+boto3>=1.34.0
+botocore>=1.34.0
+bedrock-agentcore-starter-toolkit>=0.1.0
+
+# Nova Sonic bidirectional streaming
+aws-sdk-bedrock-runtime>=0.1.0
+smithy-aws-core>=0.1.0
+
+# Twilio WebSocket + Flask
+flask>=3.0.0
+twilio>=9.0.0
+websockets>=12.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Audio (optional — only for local microphone/speaker tests)
+# pyaudio>=0.2.13

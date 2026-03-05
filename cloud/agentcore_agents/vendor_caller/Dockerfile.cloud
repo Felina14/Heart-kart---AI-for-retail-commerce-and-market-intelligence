@@ -1,0 +1,30 @@
+# HeartKart Vendor Caller — Cloud Deployment (App Runner)
+# Python 3.12 required for built-in audioop (removed in 3.13)
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
+WORKDIR /app
+
+ENV UV_SYSTEM_PYTHON=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_NO_PROGRESS=1 \
+    PYTHONUNBUFFERED=1 \
+    AWS_REGION=us-east-1 \
+    AWS_DEFAULT_REGION=us-east-1 \
+    PORT=8080
+
+# Install dependencies
+COPY requirements.txt requirements.txt
+RUN uv pip install -r requirements.txt
+
+# Create non-root user
+RUN useradd -m -u 1000 appuser
+USER appuser
+
+EXPOSE 8080
+
+# Copy only the files needed for the cloud server
+COPY cloud_server.py .
+COPY nova_sonic_voice_agent.py .
+COPY product_data_access.py .
+
+CMD ["python", "cloud_server.py"]

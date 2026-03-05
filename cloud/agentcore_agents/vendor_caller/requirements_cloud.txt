@@ -1,0 +1,16 @@
+# HeartKart Vendor Caller — Cloud Server Dependencies
+# Used for App Runner deployment (Python 3.12, audioop built-in)
+
+# HTTP + WebSocket server (single port)
+aiohttp>=3.9.0
+
+# AWS SDK
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Nova Sonic bidirectional streaming SDK
+aws-sdk-bedrock-runtime>=0.1.0
+smithy-aws-core>=0.1.0
+
+# Twilio (call initiation + TwiML)
+twilio>=9.0.0

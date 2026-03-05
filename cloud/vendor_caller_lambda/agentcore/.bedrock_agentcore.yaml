@@ -1,0 +1,48 @@
+default_agent: vendor_caller_agent
+agents:
+  vendor_caller_agent:
+    name: vendor_caller_agent
+    entrypoint: /Users/felina/Documents/HeartKart/cloud/vendor_caller_lambda/agentcore/agent.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: null
+    aws:
+      execution_role: arn:aws:iam::471112523638:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-3ce16a09f3
+      execution_role_auto_create: false
+      account: '471112523638'
+      region: us-east-1
+      ecr_repository: 471112523638.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-vendor_caller_agent
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: vendor_caller_agent-8EfdlE3zHY
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:471112523638:runtime/vendor_caller_agent-8EfdlE3zHY
+      agent_session_id: 45b15ea5-2d08-4c33-a47f-598cc7e69ad5
+    codebuild:
+      project_name: bedrock-agentcore-vendor_caller_agent-builder
+      execution_role: arn:aws:iam::471112523638:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-3ce16a09f3
+      source_bucket: bedrock-agentcore-codebuild-sources-471112523638-us-east-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
